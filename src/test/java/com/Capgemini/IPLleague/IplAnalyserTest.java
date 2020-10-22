@@ -29,4 +29,17 @@ public class IplAnalyserTest {
         } 
     }
     
+    @Test
+    public void givenIPLMostRunData_WhenSorted_ShouldReturnTopStrikeRate() throws IplAnalyserException {
+        try{
+            iplAnalyser.loadIplData(IPL_MOST_RUNS_FILE_PATH);
+            String sortedStrikeRateData = iplAnalyser.getSortedCricketData(SortedField.STRIKE_RATE);
+            IplRunsCSV[] mostRunCsv = new Gson().fromJson(sortedStrikeRateData, IplRunsCSV[].class);
+            Assert.assertEquals(333.33,mostRunCsv[0].strikeRate, 0.0);
+        }
+        catch (IplAnalyserException e){
+        	e.printStackTrace();
+
+        } 
+    }
 }

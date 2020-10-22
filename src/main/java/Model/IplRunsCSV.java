@@ -10,5 +10,6 @@ public class IplRunsCSV {
 	@CsvBindByName(column = "Avg", required = true)
 	public double battingAvg;
 
-
+	@CsvBindByName(column = "SR", required = true)
+	public double strikeRate;
 }

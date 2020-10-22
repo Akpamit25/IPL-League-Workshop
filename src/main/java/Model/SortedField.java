@@ -2,5 +2,5 @@ package Model;
 
 
 public enum  SortedField {
-    AVERAGE;
+    AVERAGE, STRIKE_RATE;
 }

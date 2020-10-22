@@ -20,6 +20,7 @@ public class IplAnalyser {
 	public IplAnalyser() {
 
 		this.sortedMap.put(SortedField.AVERAGE, Comparator.comparing(ipldata -> ipldata.battingAvg));
+		 this.sortedMap.put(SortedField.STRIKE_RATE,Comparator.comparing(ipldata -> ipldata.strikeRate));
 
 	}
 

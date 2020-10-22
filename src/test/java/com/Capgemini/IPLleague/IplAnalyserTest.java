@@ -50,4 +50,13 @@ public class IplAnalyserTest {
 		Assert.assertEquals(83, mostRunCsv[0].noOfFours + mostRunCsv[0].noOfSixes);
 
 	}
+	
+	@Test
+    public void givenIPLMostRunData_WhenSorted_ShouldReturnBest4sAnd6sStrikingRate() {
+        iplAnalyser.loadIplData(IPL_MOST_RUNS_FILE_PATH);
+        String sortedStrikeRateData = iplAnalyser.getSortedCricketData(SortedField.NO_OF_4S_AND_6S);
+        IplRunsCSV[] mostRunCsv = new Gson().fromJson(sortedStrikeRateData, IplRunsCSV[].class);
+        Assert.assertEquals(204.81,mostRunCsv[0].strikeRate,0.0);
+
+    }
 }
